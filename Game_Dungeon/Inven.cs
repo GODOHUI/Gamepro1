@@ -49,6 +49,7 @@ namespace Game_Dungeon
 
             Console.WriteLine("0.나가기");
             Console.WriteLine("1.창착관리  ");
+            Console.WriteLine("2.창착해제관리  ");
 
             string cho = Console.ReadLine();
             selectnumber=int.Parse( cho );  
@@ -68,6 +69,14 @@ namespace Game_Dungeon
                     this.invenlist();  // 루프시작 
                     //장착관리로 들어가야함
                     break;
+                case "2":
+                    Console.WriteLine("장착해제 "); 
+                    Console.WriteLine("장착 해제할 아이템을 골라주세요");
+                    selectnumber = int.Parse(Console.ReadLine());
+                    Miitem();
+                    this.invenlist();
+                    break;
+
                 default:
                     Console.WriteLine("잘못입력했습니다");
                     //선택창 들어가기 
@@ -81,13 +90,11 @@ namespace Game_Dungeon
         {
             itemlist[selectnumber - 1].Equip = true;
          
-
-
         }
         //빼는함수 
-        public void _item() 
+        public void Miitem() 
         {
-            itemlist[selectnumber].Equip = false;
+            itemlist[selectnumber-1].Equip = false;
         }
     }
 }
