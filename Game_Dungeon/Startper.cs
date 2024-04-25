@@ -46,6 +46,12 @@ namespace Game_Dungeon
             Console.WriteLine($"Gold : {Gold} ");
             Console.WriteLine(" ");
             Console.WriteLine("0. 나가기");
+
+        }
+        
+        public void Plussta()
+        {
+            
         }
 
     }
