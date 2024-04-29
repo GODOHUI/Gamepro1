@@ -9,17 +9,23 @@ namespace Game_Dungeon
 {
     internal class Startper
     {//2번 구현
-       // private static Startper _startper = new Startper(1, 10, 5, 100, 1500);
-         public  Inven _inven ; 
+     // private static Startper _startper = new Startper(1, 10, 5, 100, 1500);
 
+
+        public static MainGame _maingame = new MainGame();
+
+        public Inven _inven;
+
+        public MainGame maingame;
         public int levl;
         public int fight;
         public int def;
         public int Gold;
         public int hpLV;
+        private int selectnumber;
 
         //생성자 매개변수가 들어있는
-        public Startper(int lvl, int _fight, int _def, int hpLv, int gold)
+        public  Startper(int lvl, int _fight, int _def, int hpLv, int gold)
         {
             _inven = new Inven(); //플레이어가 생성될때 인벤토리가 만들어진다
             _inven.SetInven();
@@ -31,7 +37,7 @@ namespace Game_Dungeon
 
         }
 
-        public void Viewsta() 
+        public  void Viewsta()
         {
             Console.WriteLine("[상태보기]");
 
@@ -46,13 +52,28 @@ namespace Game_Dungeon
             Console.WriteLine($"Gold : {Gold} ");
             Console.WriteLine(" ");
             Console.WriteLine("0. 나가기");
+            Console.WriteLine(  "1. 돌아가기 ");
 
+            string cho = Console.ReadLine();
+            selectnumber = int.Parse(cho);
+            switch (selectnumber)
+            {
+                case 0:
+                    Environment.Exit(0);
+                    break;
+                case 1:
+                  
+                    break;
+                case 2:
+                default:
+                    break;
+            }
         }
-        
+
         public void Plussta()
         {
-            
+
         }
 
     }
-    }
+}

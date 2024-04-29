@@ -51,6 +51,7 @@ namespace Game_Dungeon
             Console.WriteLine("1.창착관리  ");
             Console.WriteLine("2.창착해제관리  ");
 
+
             string cho = Console.ReadLine();
             selectnumber=int.Parse( cho );  
 
